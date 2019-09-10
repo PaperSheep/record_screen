@@ -78,6 +78,7 @@ if __name__ == '__main__':
         process_list = []  # 存储处理截屏的进程列表
         img_stream_list = Manager().list()  # 多线程共享变量的写法
         start = time.time()
+        # 启动4个线程
         for _ in range(0, 4):
             p = Process(target=pic_queue, args=(img_stream_list,))
             p.start()
@@ -93,7 +94,7 @@ if __name__ == '__main__':
         p.start()
         # video_process_list.append(p)
         i += 1
-        print(i * 2, '秒')
+        # print(i * 2, '秒')
     # print('等待多线程结束')
     # for p in video_process_list:
     #     p.join()
